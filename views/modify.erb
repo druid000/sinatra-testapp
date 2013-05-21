@@ -2,7 +2,7 @@
 	<form action="/<%= @note.id %>" method="post" id="modify">
 	<input type="hidden" name="_method" value="put">
 	<textarea name="content"><%= @note.content %></textarea>
-	<input type="checkbox" name="done" <%= "checked" if @note.complete %>>
+	<input type="checkbox" name="done" <%= "checked" if @note.done %>>
 	<input type="submit">
 	</form>
 <p><a href="/<%= @note.id %>/modify">modify</a></p>
