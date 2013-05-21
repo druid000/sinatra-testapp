@@ -32,11 +32,6 @@ end
 
 DataMapper.auto_upgrade!
 
-get '/' do
-	@notes = Note.all :order => :id.desc
-	@title = 'All Notes'
-	erb :home
-end
 
 post '/' do
 	n = Note.new
@@ -50,7 +45,7 @@ end
 get '/:id' do
 	@note = Note.get params[:id]
 	@title = "Modify ##{params[:id]}"
-	erb :edit
+	erb :modify
 end
 
 put '/:id' do
